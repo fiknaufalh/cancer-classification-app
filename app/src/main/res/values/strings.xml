@@ -13,4 +13,7 @@
     <string name="back_button">Back Button</string>
     <string name="inference_time">Inference Time</string>
     <string name="save_to_history">Save to History</string>
+    <string name="time_stamp">Time Stamp</string>
+    <string name="result_history_title">Result History</string>
+    <string name="empty_list">Empty List</string>
 </resources>

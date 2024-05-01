@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:clickable="true"
+    android:paddingHorizontal="8dp"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/ivSkin"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_bold_semi"
+        android:text="@string/analysis_result"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvInferenceTime"
+        app:layout_constraintStart_toEndOf="@+id/ivSkin"
+        app:layout_constraintTop_toTopOf="@+id/ivSkin" />
+
+    <TextView
+        android:id="@+id/tvInferenceTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/inference_time"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"
+        app:layout_constraintStart_toStartOf="@+id/tvResult"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSkin"/>
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/time_stamp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSkin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivSkin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

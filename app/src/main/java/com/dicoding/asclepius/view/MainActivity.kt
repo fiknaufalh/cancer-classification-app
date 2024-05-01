@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val galleryButton = findViewById<Button>(R.id.galleryButton)
         val analyzeButton = findViewById<Button>(R.id.analyzeButton)
+        val historyButton = findViewById<ImageView>(R.id.ivHistory)
 
         galleryButton.setOnClickListener {
             startGallery()
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             } ?: run {
                 showToast(getString(R.string.empty_image_warning))
             }
+        }
+
+        historyButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+            startActivity(intent)
         }
     }
 
