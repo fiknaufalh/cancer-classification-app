@@ -31,7 +31,8 @@ class CancerAnalysisAdapter: ListAdapter<CancerAnalysis, CancerAnalysisAdapter.V
         fun bind(cancerAnalysis: CancerAnalysis) {
             imageSkin.setImageURI(cancerAnalysis.imageUri)
             resultText.text = cancerAnalysis.result
-            inferenceTimeText.text = cancerAnalysis.inferenceTime
+            inferenceTimeText.text = itemView.context
+                .getString(R.string.inference_time_custom, cancerAnalysis.inferenceTime)
             timeStampText.text = DateConverter.longToDatetime(cancerAnalysis.timeStamp).replace(" ", "\n")
         }
     }

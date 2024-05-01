@@ -1,6 +1,6 @@
 package com.dicoding.asclepius.view
 
-import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,14 +31,15 @@ class ResultActivity : AppCompatActivity() {
         // TODO: Menampilkan hasil gambar, prediksi, dan confidence score.
         setAnalysisVar(
             intent.data,
-            intent.getStringExtra("RESULT_TEXT")!!,
-            intent.getStringExtra("INFERENCE_TIME_TEXT")!!
+            intent.getStringExtra(getString(R.string.result_text))!!,
+            intent.getStringExtra(getString(R.string.inference_time_text))!!
         )
 
         val resultImageBind = findViewById<ImageView>(R.id.result_image)
         val resultTextBind = findViewById<TextView>(R.id.result_text)
         val inferenceTimeTextBind = findViewById<TextView>(R.id.inference_time_text)
         val saveButton = findViewById<Button>(R.id.saveButton)
+        val newsButton = findViewById<Button>(R.id.newsButton)
         val backButton = findViewById<CardView>(R.id.backTab)
 
         resultImageBind.setImageURI(_imageUri)
@@ -49,6 +50,11 @@ class ResultActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 saveAnalysis()
             }
+        }
+
+        newsButton.setOnClickListener {
+            val intent = Intent(this@ResultActivity, NewsActivity::class.java)
+            startActivity(intent)
         }
 
         backButton.setOnClickListener{ finish() }

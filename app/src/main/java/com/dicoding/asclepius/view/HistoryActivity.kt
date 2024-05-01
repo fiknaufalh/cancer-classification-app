@@ -2,9 +2,6 @@ package com.dicoding.asclepius.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,10 +30,10 @@ class HistoryActivity : AppCompatActivity() {
         val backButton = findViewById<CardView>(R.id.backTab)
         backButton.setOnClickListener{ finish() }
 
-        loadData()
+        loadHistoryData()
     }
 
-    private fun loadData() {
+    private fun loadHistoryData() {
         GlobalScope.launch(Dispatchers.IO) {
             val predictions =
                 CancerAnalysisDatabase.getDatabase(application)

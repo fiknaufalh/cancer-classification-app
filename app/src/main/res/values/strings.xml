@@ -16,4 +16,13 @@
     <string name="time_stamp">Time Stamp</string>
     <string name="result_history_title">Result History</string>
     <string name="empty_list">Empty List</string>
+    <string name="read_related_news">Read Related News</string>
+    <string name="published_at">Published At</string>
+    <string name="news_title">News Title</string>
+    <string name="news_description">News Description</string>
+    <string name="published_at_custom">Published at \n%s</string>
+    <string name="related_news">Related News</string>
+    <string name="result_text">RESULT_TEXT</string>
+    <string name="inference_time_text">INFERENCE_TIME_TEXT</string>
+    <string name="inference_time_custom">Inference time: %s</string>
 </resources>

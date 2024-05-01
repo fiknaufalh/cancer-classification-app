@@ -3,6 +3,7 @@ package com.dicoding.asclepius.view
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
@@ -92,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                                     }
                                 resultText = displayResult
                                 inferenceTimeText = "$inferenceTime ms"
+                                showToast("Success to analyze!")
                             } else {
                                 resultText = ""
                                 inferenceTimeText = ""
@@ -109,7 +111,8 @@ class MainActivity : AppCompatActivity() {
         ActivityResultContracts.PickVisualMedia()
     ) { uri: Uri? ->
         if (uri != null) {
-            val destinationUri = Uri.fromFile(File(cacheDir, "cropped_image"))
+            val timeStamp = SystemClock.uptimeMillis() // for differentiating cropped directory
+            val destinationUri = Uri.fromFile(File(cacheDir, "cropped_image-$timeStamp"))
             UCrop.of(uri, destinationUri)
                 .withAspectRatio(1f, 1f)
                 .start(this)
@@ -131,8 +134,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun moveToResult() {
         val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra("RESULT_TEXT", resultText)
-        intent.putExtra("INFERENCE_TIME_TEXT", inferenceTimeText)
+        intent.putExtra(getString(R.string.result_text), resultText)
+        intent.putExtra(getString(R.string.inference_time_text), inferenceTimeText)
         intent.setData(currentImageUri)
         startActivity(intent)
     }
