@@ -10,10 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.BuildConfig
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.remote.response.ArticlesItem
 import com.dicoding.asclepius.data.remote.response.NewsResponse
 import com.dicoding.asclepius.data.remote.retrofit.ApiConfig
-import com.dicoding.asclepius.helper.CancerAnalysisAdapter
 import com.dicoding.asclepius.helper.NewsAdapter
 import retrofit2.Call
 import retrofit2.Callback
